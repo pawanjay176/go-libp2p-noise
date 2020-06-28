@@ -172,6 +172,7 @@ func (s *secureSession) sendHandshakeMessage(hs *noise.HandshakeState, payload [
 // to initialize cipher states.
 func (s *secureSession) readHandshakeMessage(hs *noise.HandshakeState) ([]byte, error) {
 	l, err := s.readNextInsecureMsgLen()
+	fmt.Println("Length I got is {}", l)
 	if err != nil {
 		return nil, err
 	}
